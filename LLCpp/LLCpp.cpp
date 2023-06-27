@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <array>
+#include <string>
 
 #include "LLCpp.h"
 #include "Cow.h"
