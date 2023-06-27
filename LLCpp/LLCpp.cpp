@@ -2,6 +2,7 @@
 #include <array>
 
 #include "LLCpp.h"
+#include "Cow.h"
 
 int main()
 {
@@ -16,6 +17,9 @@ int main()
 		sum += grade;
 	}
 	std::cout << sum / grades.size() << '\n';
+
+	Cow cow = { 3, "Olive", Dairy };
+	std::cout << cow.getName() << '\n';
 
 	return 0;
 }
