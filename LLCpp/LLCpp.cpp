@@ -1,12 +1,12 @@
-﻿// LLCpp.cpp : Defines the entry point for the application.
-//
+﻿#include <iostream>
 
 #include "LLCpp.h"
 
-using namespace std;
-
 int main()
 {
-	cout << "Hello CMake." << endl;
+	std::string name;
+	std::cout << "Please enter your first name:" << '\n';
+	std::cin >> name;
+	std::cout << "Hello, " << name << '\n';
 	return 0;
 }
