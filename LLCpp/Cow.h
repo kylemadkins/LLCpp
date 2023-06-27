@@ -4,13 +4,10 @@
 
 #include <string>
 
-enum CowType {
-	Dairy,
-	Meat,
-	Pet
-};
+enum CowType { Dairy, Meat, Pet };
 
-class Cow {
+class Cow
+{
 private:
 	int age;
 	std::string name;
