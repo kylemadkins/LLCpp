@@ -2,6 +2,7 @@
 #include <array>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "LLCpp.h"
 #include "Cow.h"
@@ -44,23 +45,24 @@ int main()
 	changeFirstChar(str, 'P');
 	std::cout << str << '\n';
 
-	Student* kyle = new Student(1, "Kyle");
-	Student* stella = new Student(2, "Stella");
-	Course* math = new Course(1, "Calculus I", 3);
-	Grade* kgrade = new Grade(*kyle, *math, 93);
-	Grade* sgrade = new Grade(*stella, *math, 51);
-	std::vector<Grade*> grades = { kgrade, sgrade };
-	for (auto& grade : grades)
+	std::vector students = { Student(1, "Kyle"), Student(2, "Stella") };
+	std::vector courses = { Course(1, "Math", 3) };
+	std::ifstream file;
+	file.open("grades.txt");
+	if (file.fail())
 	{
-		Student student = grade->getStudent();
-		Course course = grade->getCourse();
-		std::cout << student.getName() << " has a grade of " << grade->getGrade() << " in " << course.getName() << '\n';
-		delete grade;
+		std::cout << "grades.txt not found!" << std::endl;
 	}
-	grades.clear();
-	delete kyle;
-	delete stella;
-	delete math;
+	else
+	{
+		std::string line;
+		while (!file.eof())
+		{
+			getline(file, line);
+			std::cout << line << '\n';
+		}
+		file.close();
+	}
 
 	return 0;
 }
