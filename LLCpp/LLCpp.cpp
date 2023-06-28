@@ -5,6 +5,11 @@
 #include "LLCpp.h"
 #include "Cow.h"
 
+void changeFirstChar(std::string& str, char first)
+{
+	str[0] = first;
+}
+
 int main()
 {
 	std::string name;
@@ -31,6 +36,10 @@ int main()
 	Cow* anotherCow = new Cow(2, "Julia", Pet);
 	std::cout << anotherCow->getName() << " is " << anotherCow->getAge() << " years old" << '\n';
 	delete anotherCow;
+
+	std::string str = "Cat";
+	changeFirstChar(str, 'P');
+	std::cout << str << '\n';
 
 	return 0;
 }
