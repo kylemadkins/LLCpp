@@ -1,6 +1,5 @@
 #ifndef STUDENT_RECORDS_H
 #define STUDENT_RECORDS_H
-#endif
 
 #include <string>
 
@@ -43,3 +42,5 @@ public:
 	Course& getCourse();
 	int getGrade() const;
 };
+
+#endif

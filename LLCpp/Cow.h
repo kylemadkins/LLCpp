@@ -1,6 +1,5 @@
 #ifndef COW_H
 #define COW_H
-#endif
 
 #include <string>
 
@@ -18,3 +17,5 @@ public:
 	std::string getName();
 	CowType getType();
 };
+
+#endif
