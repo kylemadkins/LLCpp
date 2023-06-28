@@ -22,5 +22,15 @@ int main()
 	Cow cow = { 3, "Olive", Dairy };
 	std::cout << cow.getName() << '\n';
 
+	int a = 100;
+	int* aptr = &a;
+	std::cout << a << '\n';
+	std::cout << aptr << '\n';
+	std::cout << *aptr << '\n';
+
+	Cow* anotherCow = new Cow(2, "Julia", Pet);
+	std::cout << anotherCow->getName() << " is " << anotherCow->getAge() << " years old" << '\n';
+	delete anotherCow;
+
 	return 0;
 }
