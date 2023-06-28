@@ -44,18 +44,23 @@ int main()
 	changeFirstChar(str, 'P');
 	std::cout << str << '\n';
 
-	Student kyle = { 1, "Kyle" };
-	Student stella = { 2, "Stella" };
-	Course math = { 1, "Calculus I", 3 };
-	Grade kgrade = { kyle, math, 93 };
-	Grade sgrade = { stella, math, 51 };
-	std::vector<Grade> grades = { kgrade, sgrade };
+	Student* kyle = new Student(1, "Kyle");
+	Student* stella = new Student(2, "Stella");
+	Course* math = new Course(1, "Calculus I", 3);
+	Grade* kgrade = new Grade(*kyle, *math, 93);
+	Grade* sgrade = new Grade(*stella, *math, 51);
+	std::vector<Grade*> grades = { kgrade, sgrade };
 	for (auto& grade : grades)
 	{
-		Student student = grade.getStudent();
-		Course course = grade.getCourse();
-		std::cout << student.getName() << " has a grade of " << grade.getGrade() << " in " << course.getName() << '\n';
+		Student student = grade->getStudent();
+		Course course = grade->getCourse();
+		std::cout << student.getName() << " has a grade of " << grade->getGrade() << " in " << course.getName() << '\n';
+		delete grade;
 	}
+	grades.clear();
+	delete kyle;
+	delete stella;
+	delete math;
 
 	return 0;
 }
