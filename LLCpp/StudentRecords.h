@@ -11,7 +11,7 @@ private:
 	std::string name;
 
 public:
-	Student(int id = 0, std::string name = "") : id(id), name(name) {}
+	Student(int id, std::string name) : id(id), name(name) {}
 	int getId() const;
 	std::string getName() const;
 };
@@ -24,7 +24,7 @@ private:
 	int credits;
 
 public:
-	Course(int id = 0, std::string name = "", int credits = 0) : id(id), name(name), credits(credits) {}
+	Course(int id, std::string name, int credits) : id(id), name(name), credits(credits) {}
 	int getId() const;
 	std::string getName() const;
 	int getCredits() const;
